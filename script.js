@@ -7,6 +7,7 @@ const btnYugioh = document.querySelector('.btn-yugioh');
 const closeBtnFahrenheit = document.querySelector('.close-modal-fahrenheit');
 const closeBtnYugioh = document.querySelector('.close-modal-yugioh');
 
+// inputs
 const inputFahrenheit = document.getElementById('fahrenheit');
 const inputYugioh = document.getElementById('yugioh');
 
@@ -44,6 +45,7 @@ const openModalYugioh = function () {
 	overlay.classList.remove('hidden');
 };
 
+// main codeblock
 for (let i = 0; i < btn.length; i++) {
 	if (btn[i].classList.contains('btn-fahrenheit')) {
 		// fahrenheit to celsius conversion
@@ -62,8 +64,8 @@ for (let i = 0; i < btn.length; i++) {
 		};
 
 		btn[i].addEventListener('click', function () {
-			console.log(convertFahrToCelsius());
 			modalTextFahrenheit.textContent = convertFahrToCelsius();
+			inputFahrenheit.value = '';
 
 			openModalFahrenheit();
 			overlay.addEventListener('click', closeModalFahrenheit);
@@ -81,15 +83,12 @@ for (let i = 0; i < btn.length; i++) {
 
 				for (let i = 0; i < arr1.length; i++) {
 					if (arr1[i] % 2 === 0) {
-						// arr2.push("-Yu");
 						arr2[i] = `Yu`;
 					}
 					if (arr1[i] % 3 === 0) {
-						// arr2.push('-Gi');
 						arr2[i] = arr2[i] ? `${arr2[i]}-Gi` : 'Gi';
 					}
 					if (arr1[i] % 5 === 0) {
-						// arr2.push('-Oh');
 						arr2[i] = arr2[i] ? `${arr2[i]}-Oh` : 'Oh';
 					}
 					if (!arr2[i]) {
@@ -107,6 +106,8 @@ for (let i = 0; i < btn.length; i++) {
 		};
 		btn[i].addEventListener('click', function () {
 			modalTextYugioh.textContent = checkYuGiOh();
+			inputYugioh.value = '';
+
 			openModalYugioh();
 			overlay.addEventListener('click', closeModalYugioh);
 			closeBtnYugioh.addEventListener('click', closeModalYugioh);
