@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="stylesheet" href="css/style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap"
+			rel="stylesheet"
+		/>
+
+		<title>Algorithm Task - Zuri</title>
+	</head>
+	<body>
+		<header>
+			<div class="form">
+				<h2>Algorithm Task</h2>
+				<div class="form__group">
+					<div class="form__input">
+						<input type="name" name="fahrenheit" id="fahrenheit" required />
+						<button class="btn btn-fahrenheit">&rarr;</button>
+					</div>
+					<label class="form__label" for="fahrenheit"
+						>Convert fahrenheit to degree celsius</label
+					>
+				</div>
+
+				<div class="form__group">
+					<div class="form__input">
+						<input type="name" name="yugioh" id="yugioh" required />
+						<button class="btn btn-yugioh">&rarr;</button>
+					</div>
+					<label class="form__label" for="number"
+						>Enter a number and watch what happens</label
+					>
+				</div>
+			</div>
+
+			<div class="modal modal-fahrenheit hidden">
+				<button class="close-modal close-modal-fahrenheit">&times;</button>
+				<div class="modal-text">
+					fahrenheit
+				</div>
+			</div>
+
+			<div class="modal modal-yugioh hidden">
+				<button class="close-modal close-modal-yugioh">&times;</button>
+				<div class="modal-text">
+					yugioh
+				</div>
+			</div>
+			<div class="overlay hidden"></div>
+		</header>
+	</body>
+	<script src="script.js"></script>
+</html>
