@@ -127,9 +127,6 @@ header {
   border-radius: 5px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 10;
-}
-
-.modal-text {
   display: flex;
   align-items: center;
   justify-content: center;

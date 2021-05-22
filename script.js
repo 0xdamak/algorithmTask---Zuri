@@ -95,7 +95,6 @@ for (let i = 0; i < btn.length; i++) {
 						arr2[i] = arr1[i];
 					}
 				}
-				arr1.map(val => {});
 
 				return arr2;
 			} else if (typeof n == 'string') {
