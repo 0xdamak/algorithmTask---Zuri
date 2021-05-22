@@ -47,17 +47,30 @@ const openModalYugioh = function () {
 
 // fahrenheit to celsius conversion
 const convertFahrToCelsius = function (fahrenheit) {
-	fahrenheit = Number(inputFahrenheit.value);
-	if (typeof fahrenheit == 'number') {
+	fahrenheit = inputFahrenheit.value;
+	if (isNaN(fahrenheit) == false) {
+		fahrenheit = Number(inputFahrenheit.value);
 		const x = fahrenheit - 32;
 		const y = 5 / 9;
 		const z = x * y;
 		return z.toFixed(4) + '°C';
-	} else if (typeof fahrenheit == 'string') {
-		return `${fahrenheit} is not a valid number but a ${'string'}`;
 	} else {
-		return `${fahrenheit} is not a valid number but a ${'boolean'}`;
+		if (typeof fahrenheit == 'string') {
+			return `${fahrenheit} is not a valid number but a ${'string'}`;
+		} else {
+			return `${fahrenheit} is not a valid number but a ${'boolean'}`;
+		}
 	}
+	// if (typeof fahrenheit == 'number') {
+	// 	const x = fahrenheit - 32;
+	// 	const y = 5 / 9;
+	// 	const z = x * y;
+	// 	return z.toFixed(4) + '°C';
+	// } else if (typeof fahrenheit == 'string') {
+	// 	return `${fahrenheit} is not a valid number but a ${'string'}`;
+	// } else {
+	// 	return `${fahrenheit} is not a valid number but a ${'boolean'}`;
+	// }
 };
 
 // display result for fahrenheit conversion
@@ -72,8 +85,10 @@ const resultFahrenheit = function () {
 
 // yugioh func
 const checkYuGiOh = function (n) {
-	n = Number(inputYugioh.value);
-	if (typeof n == 'number') {
+	n = inputYugioh.value;
+	if (isNaN(n) == false) {
+		n = Number(inputYugioh.value);
+
 		const arr1 = Array.from({ length: n }, (_, i) => i + 1);
 		const arr2 = [];
 
@@ -93,10 +108,12 @@ const checkYuGiOh = function (n) {
 		}
 
 		return arr2;
-	} else if (typeof n == 'string') {
-		return `${n} is not a valid number but a ${'string'}`;
 	} else {
-		return `${n} is not a valid number but a ${'boolean'}`;
+		if (typeof n == 'string') {
+			return `${n} is not a valid number but a ${'string'}`;
+		} else {
+			return `${n} is not a valid number but a ${'boolean'}`;
+		}
 	}
 };
 
