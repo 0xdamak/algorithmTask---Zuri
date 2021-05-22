@@ -56,21 +56,13 @@ const convertFahrToCelsius = function (fahrenheit) {
 		return z.toFixed(4) + '°C';
 	} else {
 		if (typeof fahrenheit == 'string') {
-			return `${fahrenheit} is not a valid number but a ${'string'}`;
-		} else {
-			return `${fahrenheit} is not a valid number but a ${'boolean'}`;
+			return inputFahrenheit.value.toLowerCase() === 'true'
+				? `${fahrenheit} is not a valid number but a ${'boolean'}`
+				: inputFahrenheit.value.toLowerCase() === 'false'
+				? `${fahrenheit} is not a valid number but a ${'boolean'}`
+				: `${fahrenheit} is not a valid number but a ${'string'}`;
 		}
 	}
-	// if (typeof fahrenheit == 'number') {
-	// 	const x = fahrenheit - 32;
-	// 	const y = 5 / 9;
-	// 	const z = x * y;
-	// 	return z.toFixed(4) + '°C';
-	// } else if (typeof fahrenheit == 'string') {
-	// 	return `${fahrenheit} is not a valid number but a ${'string'}`;
-	// } else {
-	// 	return `${fahrenheit} is not a valid number but a ${'boolean'}`;
-	// }
 };
 
 // display result for fahrenheit conversion
@@ -110,9 +102,11 @@ const checkYuGiOh = function (n) {
 		return arr2;
 	} else {
 		if (typeof n == 'string') {
-			return `${n} is not a valid number but a ${'string'}`;
-		} else {
-			return `${n} is not a valid number but a ${'boolean'}`;
+			return inputYugioh.value.toLowerCase() === 'true'
+				? `${n} is not a valid number but a ${'boolean'}`
+				: inputYugioh.value.toLowerCase() === 'false'
+				? `${n} is not a valid number but a ${'boolean'}`
+				: `${n} is not a valid number but a ${'string'}`;
 		}
 	}
 };
@@ -149,7 +143,7 @@ const init = (function () {
 // Execute function when the user releases a key on the keyboard
 inputFahrenheit.addEventListener('keyup', function (event) {
 	// Number 13 is the "Enter" key on the keyboard
-	if (event.key === 'Enter') {
+	if (event.key === 'Enter' && modalFahrenheit.classList.contains('hidden')) {
 		// Cancel the default action, if needed
 		event.preventDefault();
 
@@ -161,7 +155,7 @@ inputFahrenheit.addEventListener('keyup', function (event) {
 // Execute function when the user releases a key on the keyboard
 inputYugioh.addEventListener('keyup', function (event) {
 	// Number 13 is the "Enter" key on the keyboard
-	if (event.key === 'Enter') {
+	if (event.key === 'Enter' && modalYugioh.classList.contains('hidden')) {
 		// Cancel the default action, if needed
 		event.preventDefault();
 
